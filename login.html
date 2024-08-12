@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Login - Infinite Travels</title>
+    <link rel="website icon" href="assets/icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="loader.js"></script>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    }
+:root{
+    --clr1-: #00B4D8;
+    --clr2-: #48CAE4;
+    --clr3-: #CAF0F8;
+    --clr4-: #90E0EF;
+}
+html{
+    background: rgb(20, 20, 20); 
+}
+body{
+    background: url(assets/back\ \(2\).jpg) no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    background-position: center;
+    overflow-x: hidden;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 1;
+}
+.input-form{
+    height: 600px;
+    width: 500px;
+    background: linear-gradient(10deg,rgba(255,0,0,.1),rgba(255,0,0,.5));
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); */
+}
+.input-form h1{
+    position: absolute;
+    top: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.input-field{
+    position: relative;
+    margin: 25px;
+}
+.input-field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s all;
+}
+.input-field input{
+    width: 350px;
+    height: 40px;
+    font-size:17px;
+    color: #ededed;
+    padding: 15px 10px;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
+.input-field input:focus~label,
+.input-field input:valid~label{
+    top: 0;
+    font-size: 12px;
+     
+}
+.input-field a{
+    position: absolute;
+    left: 320px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.check {
+    display: flex;
+    align-items: center;
+    margin: 10px 30px;
+}
+
+.check label {
+    color: #ededed;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 2px; 
+}
+.check a{
+    color: #ededed;
+    margin-left: 50px;
+}
+.check a:hover{
+    opacity: .8;
+    transition: .2s;
+}
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 22px;
+    width: 22px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]:after {
+    content: '\f00c';
+    font-weight: 700;
+    font-size: 16px;
+    color: #ededed;
+    font-family: "Font Awesome 5 Free";
+    display: none;
+}
+
+input[type="checkbox"]:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transition: .2s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+.input-btn{
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-btn button{
+    margin: 40px 10px 10px 0;
+    padding: 8px 145px;
+    font-size: 20px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .2s;
+}
+.input-btn button:hover{
+    opacity: .9;
+    transform: scale(1.03);
+}
+.register{
+    position: absolute;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 77%;
+}
+.register , .register a{
+    color: #ededed;
+}
+.policy{
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 65px;
+}
+.policy a{
+    color: rgb(180, 178, 178);
+    font-size: 12px;
+    padding-left: 50px;
+}
+.close-eye{
+    display: none;
+}
+.homelink{
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    border: 2px solid #d08186;
+    border-radius: 50%;
+    background-color: #d08186;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 5px 10px;
+    transition: .3s;
+}
+.homelink:hover{
+    transform: scale(1.02) ;
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5))  ;
+    backdrop-filter: blur(30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s , visibility 1.5s;
+    z-index: 999;
+}
+.loader-hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+.loader::after{
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 15px solid #ededed;
+    border-top-color: rgba(255, 0, 0, .4);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+@keyframes loading{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+} */
+    </style>
+</head>
+<body>
+    <script src="loader.js"></script>
+    <div class="loader" id="loader"></div>
+    <div class="container">
+        <div class="homelink">
+            <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
+        </div>
+        <div class="input-form">
+            <h1 class="main-head">Login</h1>
+        <form action="#">
+            <div class="input-field">
+                <input type="text" required autocomplete="off">
+                <label for="">Username</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="passwordInput" required autocomplete="off">
+                <label for="passwordInput">Password</label>
+                <a onclick="togglePassword()" class="eye-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="eye" fill="#ededed">
+                        <g>
+                            <g>
+                                <path d="M256,406c-30.6,0-62.2-7.6-94-22.5c-24.9-11.7-50-27.9-74.6-48.2C45.9,301,20.3,267,19.2,265.6
+                                c-4.3-5.7-4.3-13.5,0-19.2c1.1-1.4,26.7-35.4,68.2-69.7c24.6-20.3,49.7-36.5,74.6-48.2c31.8-14.9,63.4-22.5,94-22.5
+                                s62.2,7.6,94,22.5c24.9,11.7,50,27.9,74.6,48.2c41.5,34.3,67.2,68.3,68.2,69.7c4.3,5.7,4.3,13.5,0,19.2
+                                c-1.1,1.4-26.7,35.4-68.2,69.7c-24.6,20.3-49.7,36.5-74.6,48.2C318.2,398.4,286.6,406,256,406z M52.6,256
+                                c25.1,29.7,108,118,203.4,118c95.6,0,178.3-88.3,203.4-118c-25.1-29.7-108-118-203.4-118C160.4,138,77.7,226.3,52.6,256z"></path>
+                            </g>
+                            <g>
+                                <path d="M256,328c-39.7,0-72-32.3-72-72s32.3-72,72-72s72,32.3,72,72S295.7,328,256,328z M256,216
+                                c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S278.1,216,256,216z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="check">
+                <label for="check">Remember Me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="input-btn">
+                <button type="submit">Login</button>
+            </div>
+            <div class="register">
+                <p>Not a Member? <a href="#">Register Now !</a></p>
+            </div>
+
+            <div class="policy">
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </form>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById('passwordInput');
+            var eyeButton = document.querySelector('.eye-button');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="eye" fill="#ededed"><g><g><path d="M256,406c-30.6,0-62.2-7.6-94-22.5c-24.9-11.7-50-27.9-74.6-48.2C45.9,301,20.3,267,19.2,265.6 c-4.3-5.7-4.3-13.5,0-19.2c1.1-1.4,26.7-35.4,68.2-69.7c24.6-20.3,49.7-36.5,74.6-48.2c31.8-14.9,63.4-22.5,94-22.5 s62.2,7.6,94,22.5c24.9,11.7,50,27.9,74.6,48.2c41.5,34.3,67.2,68.3,68.2,69.7c4.3,5.7,4.3,13.5,0,19.2 c-1.1,1.4-26.7,35.4-68.2,69.7c-24.6,20.3-49.7,36.5-74.6,48.2C318.2,398.4,286.6,406,256,406z M52.6,256 c25.1,29.7,108,118,203.4,118c95.6,0,178.3-88.3,203.4-118c-25.1-29.7-108-118-203.4-118C160.4,138,77.7,226.3,52.6,256z"></path></g><g><path d="M256,328c-39.7,0-72-32.3-72-72s32.3-72,72-72s72,32.3,72,72S295.7,328,256,328z M256,216 c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S278.1,216,256,216z"></path></g></g></svg>';
+            } else {
+                passwordInput.type = 'password';
+                eyeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" id="eye"><g fill="none" fill-rule="evenodd" stroke="#ededed" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"></path></g></svg>';
+            }
+        }
+    </script>
+    <script src="loader.js"></script>
+</body>
+</html>

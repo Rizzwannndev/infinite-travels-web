@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Travels -Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" href="assets/icon.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @keyframes appear {
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .scroll-ani{
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+    </style>
+</head>
+<body>
+<!-- Header     -->
+<video class="back-vid"  muted autoplay loop >
+    <source src="assets/vid5.mp4" type="video/mp4">
+</video>
+
+        <nav class="navbar">
+            <ul class="sidenav">
+                <li class="arrow" onclick="hideNav()"><a><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a></li>
+                <li onclick="hideNav()"><a href="#home">Home</a></li>
+                <li onclick="hideNav()"><a href="#review">Reviews</a></li>
+                <li onclick="hideNav()"><a href="#">Services</a></li>
+                <li onclick="hideNav()"><a href="#contact">Contact</a></li>
+                <li class="logbtn"><a href="login.html">Login</a></li>
+            </ul>
+
+
+            <ul class="navLinks">
+                <li><a href="#" class="logo">TRAVELS &#9992;</a></li>
+                <li class="hideOnMob"><a href="#">Home</a></li>
+                <li class="hideOnMob"><a href="#review">Reviews</a></li>
+                <li class="hideOnMob"><a href="#">Services</a></li>
+                <li class="hideOnMob"><a href="#contact">Contact</a></li>
+                <li class="hideOnMob logbtn"><a href="login.html">Login</a></li>
+                <li class="menu-btn" onclick="showNav()"><a><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></a></li>
+            </ul>
+        </nav>
+
+        <!-- home section  -->
+        <section class="home" id="home">
+            <div class="first-head">
+                <h1>Infinite Travels | Travel Agency</h1>
+            </div>
+            <div class="Second-head">
+                <h1>Discover Your Next Adventure: Explore with Us!</h1>
+            </div>
+            <div class="content">
+               <p>Embark on an extraordinary voyage through our travel website, a gateway to an unparalleled realm of exploration and discovery. Dive into a mosaic of destinations that promise boundless adventures, from the tranquil allure of remote landscapes to the vibrant heartbeat of bustling cities. Our meticulously curated selection of experiences invites you to unravel hidden gems, immerse yourself in diverse cultures, and craft enduring memories. With seamless planning tools and expert guidance at your fingertips, we're dedicated to transforming your travel aspirations into a breathtaking reality. Unleash your wanderlust, unearth the extraordinary, and embark on a journey that transcends the ordinary—because your next adventure awaits, and it promises to be nothing short of extraordinary.</p>
+            </div>
+            <div class="button">
+                <a class="btn" href="#">Explore</a>
+            </div>
+
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/rizwanwaseem_?igshid=YTQwZjQ0NmI0OA==" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="#"><i class='bx bxl-linkedin' ></i></a>
+            </div>
+        </section>
+
+        <!-- Review section  -->
+        <section class="review" id="review">
+            <div class="scroll-ani">
+                <h1 class="rev-head">Reviews On Services</h1>
+            </div>
+            <div class="card-1-rev">
+                <h1>We Provide</h1>
+                <video src="assets/t1.mp4" height="250" width="500"></video>
+            </div>
+            <div class="card-2-rev">
+                <h1>The Best services</h1>
+                <video src="assets/t2.mp4" height="250" width="500"></video>
+            </div>
+            <div class="card-3-rev">
+                <h1>That You Need</h1>
+                <video src="assets/t3.mp4" height="250" width="500"></video>
+            </div>
+            <div class="button btn-rev">
+                <a class="btn " href="#">View More !</a>
+            </div>
+        </section>
+
+        <!-- Contact Section  -->
+        <section class="contact" id="contact">
+            <div class="contact-box">
+                <div class="con-head">
+                    <h1>Contact Us !</h1>
+                </div>
+                <form action="#">
+                    <div class="input-box">
+                        <div class="input-field field">
+                            <input type="text" id="name" required placeholder="Full Name" class="item" autocomplete="off">
+                        </div>
+                        <div class="input-field field">
+                            <input type="email" id="email" required placeholder="Email Address" class="item" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="input-field field">
+                            <input type="number" id="phone" required placeholder="Phone Number" class="item" autocomplete="off">
+                        </div>
+                        <div class="input-field field">
+                            <input type="text" id="country" required placeholder="Country" class="item" autocomplete="off">
+                        </div>
+                    </div>
+        
+                    <div class="textarea-field field">
+                        <textarea name="msg" id="message" cols="30" rows="10" class="item" autocomplete="off" placeholder="Elaborate Your Concern" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- Footer  -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                    </div>
+    
+                    <div class="footer-col">
+                        <h4>Get Help</h4>
+                            <ul>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Payment Options</a></li>
+                            </ul>
+                    </div>
+                    <div class="footer-col footer-col-lic">
+                        <h4>License</h4>
+                        <p>Copyright &copy; 2024 | Infinite Travels &#9992; | Travel Agency </p>
+                        <p>Website Made By <a href="https://instagram.com/rizwanwaseem_?igshid=YTQwZjQ0NmI0OA==" target="_blank">Rizwan Waseem</a></p>
+                    </div>    
+    
+                </div>
+            </div>
+        </footer>
+
+<script>
+     function showNav() {
+    const sidenav = document.querySelector('.sidenav');
+    sidenav.style.width = '270px';
+    sidenav.style.opacity = '1';
+    sidenav.style.display = 'flex';
+    sidenav.style.visibility = 'visible';
+    sidenav.style.transition = 'width 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0s';
+
+    if (window.innerWidth = 415) {
+        sidenav.style.width = '100%';
+    }
+}
+
+function hideNav() {
+    const sidenav = document.querySelector('.sidenav');
+    sidenav.style.width = '0';
+    sidenav.style.opacity = '0';
+    sidenav.style.visibility = 'hidden';
+    sidenav.style.transition = 'width 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.3s';
+}
+
+// JavaScript to toggle the navbar class on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('nav');
+
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+</script>
+
+</body>
+</html>
